@@ -18,8 +18,8 @@ Active Model.
 You can interact with this application from the Rails console after cloning
 it from Git and vendoring the latest version of Rails like so:
 
-  git clone http://github.com/mikel/rails-examples
-  cd active_model_examples
+  git clone git://github.com/mikel/rails-examples.git
+  cd rails-examples
   git clone git://github.com/rails/rails.git vendor/rails
   gem bundle
   ruby script/console
