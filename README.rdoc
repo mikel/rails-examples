@@ -1,0 +1,45 @@
+== Rails Examples
+
+Rails Examples is a Rails 3.0 (pre) application that has a bunch of examples
+showing the use of various new Rails Plugin API.
+
+Currently, each of the files inside of app/models is a class that exercises
+a single aspect of the Active Model API.
+
+The example models are meant to be minimalistic implementations, and try also
+to only use one aspect of Active Model at a time.  Sometimes this is not possible,
+for example, ErrorsPerson shows how to use the ActiveModel::Errors class, but
+also uses ActiveModel::Naming.
+
+This repository is a full Rails 3.0 (pre) application.  The intention is to
+add more and more self contained examples to this as we go, showing how to use
+Active Model.
+
+You can interact with this application from the Rails console after cloning
+it from Git and vendoring the latest version of Rails like so:
+
+  git clone http://github.com/mikel/active_model_examples
+  cd active_model_examples
+  git clone git://github.com/rails/rails.git vendor/rails
+  gem bundle
+  ruby script/console
+
+You should then be able to test out the new Active Model examples as per
+the Active Model docs:
+
+  light = TrafficLight.new
+  light.current_state         #=> :red
+  light.change_color!
+  light.current_state         #=> :green
+  
+  person = ErrorsPerson.new
+  person.validate!
+  person.erros.full_messages  #=> ["name can not be nil"]
+
+  person = DirtyPerson.new
+  person.changed?             #=> false
+  person.name = "Mikel"
+  person.changed?             #=> true
+  person.changes              #=> {"name"=>[nil, "Mikel"]}
+
+Feel free to send me other examples you feel need
