@@ -42,4 +42,4 @@ the Active Model docs:
   person.changed?             #=> true
   person.changes              #=> {"name"=>[nil, "Mikel"]}
 
-Feel free to send me other examples you feel need
+Feel free to fork and commit!
